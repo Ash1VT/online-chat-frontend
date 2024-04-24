@@ -15,14 +15,14 @@ const AppRouter = () => {
                     {privateRoutes.map(route => 
                         <Route element={route.element} path={route.path} key={route.path}/>
                     )}
-                    <Route path='*' element={<Navigate to="chat"/>}></Route>
+                    <Route path='*' element={<Navigate to="/chat"/>}></Route>
                 </Routes>
                 :
                 <Routes>    
                     {publicRoutes.map(route => 
                         <Route element={route.element} path={route.path} key={route.path}/>
                     )}
-                    <Route path='*' element={<Navigate to="login"/>}></Route>
+                    <Route path='*' element={<Navigate to="/login"/>}></Route>
                 </Routes>
             }
         </HashRouter>
