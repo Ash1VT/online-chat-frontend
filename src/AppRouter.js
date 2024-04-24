@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import AuthContext from "./contexts/auth/AuthContext";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {BrowserRouter, HashRouter, Navigate, Route, Routes} from "react-router-dom";
 import { privateRoutes, publicRoutes } from './routes';
 
 const AppRouter = () => {
@@ -8,7 +8,7 @@ const AppRouter = () => {
     const {authContextData} = useContext(AuthContext)
 
     return (
-        <BrowserRouter>{
+        <HashRouter>{
             authContextData.isAuth
                 ?
                 <Routes>
@@ -25,7 +25,7 @@ const AppRouter = () => {
                     <Route path='*' element={<Navigate to="login"/>}></Route>
                 </Routes>
             }
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
